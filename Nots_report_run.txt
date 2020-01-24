@@ -1,0 +1,34 @@
+- Para gerar o relatório do jmeter no prompt a partir do CSV gerado:
+
+caminho do Jmeter -g  caminho do csv de resultado -o caminho da pasta q ele vai criar o html:
+
+Exemplo:
+C:\Performance\apache-jmeter-5.0\bin\jmeter.bat -g C:\Performance\Resultados\SocketLinux_B49C_Results_Sum_20190227_1300.csv -o C:\Performance\Resultados\Report
+
+
+- Alterar o heap size no jmeter.batch
+
+Antes
+set HEAP=-Xms1g -Xmx4g -XX:MaxMetaspaceSize=256m
+
+Depois
+set HEAP=-Xms512m -Xmx512m -XX:MaxMetaspaceSize=256m
+
+
+- Run Performance teste in non-gui mode
+
+jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+
+n (non-gui-mode)
+
+t (TestPlan name)
+
+l (Report)
+
+Exemplo:
+jmeter -n -t C:\Users\user\Desktop\Serasa\PerformanceTest\TreinamentoJMeter\Jmeter\googleMaps_seachPlace.jmx -l C:\Users\user\Desktop\Serasa\PerformanceTest\TreinamentoJMeter\Jmeter\Results.jtl -e -o C:\Users\user\Desktop\Serasa\PerformanceTest\TreinamentoJMeter\Jmeter\report_html
+
+
+- Monitorar o Servidor
+
+Yourkit - Java Profiler (para monitoramento do servidor da aplicação) ferramenta paga!
